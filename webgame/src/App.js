@@ -13,11 +13,12 @@ function App() {
   const updateplayerDetails=(newPlayerDetails)=>{
     setPlayerDetailsList(old=>[...old,newPlayerDetails])
   }
+
   const letPlayButton=()=>{
     setIsLogin(old=>!old)
   }
   return (
-    <>
+    <> 
     {isLogin?<Game letPlayButton={letPlayButton} playerDetailsList={playerDetailsList}/>:<UserRegistration updateplayerDetails={updateplayerDetails} letPlayButton={letPlayButton}/>}
     </>
   );

@@ -46,7 +46,6 @@
   
   .game-status {
     color: #ffffff;
-    font-family: 'Roboto';
     font-size: 32px;
     font-weight: bold;
   }
@@ -60,7 +59,6 @@
   .current-score-label {
     text-align: center;
     color: #ffffff;
-    font-family: 'Roboto';
     font-size: 18px;
     font-weight: bold;
     margin: 0px;
@@ -75,7 +73,6 @@
   .current-score-value {
     text-align: center;
     color: #6a59ff;
-    font-family: 'Roboto';
     font-size: 32px;
     font-weight: bold;
     margin: 0px;
@@ -90,7 +87,6 @@
   .play-again-button {
     color: #ffffff;
     background-color: rgb(124, 124, 240);
-    font-family: 'Roboto';
     font-size: 16px;
     font-weight: bold;
     border: none;

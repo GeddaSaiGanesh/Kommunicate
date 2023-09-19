@@ -4,7 +4,7 @@ const LOSE_IMAGE = "https://res.cloudinary.com/dn4e2kdbi/image/upload/v169503931
 const WON_IMAGE = 'https://res.cloudinary.com/dn4e2kdbi/image/upload/v1695041680/615c14381725d20018b7c22a_unr0vv.webp'
 
 const WinOrLoseCard = props => {
-  const {isWon, onClickPlayAgain, score} = props
+  const {isWon, onClickPlayAgain,maxScore, score,} = props
   const imageUrl = isWon ? WON_IMAGE : LOSE_IMAGE
   const gameStatus = isWon ? 'You Won' : 'You Lose'
   const scoreLabel = isWon ? 'Best Score' : 'Score'
@@ -14,7 +14,7 @@ const WinOrLoseCard = props => {
       <div className="details-section">
         <h1 className="game-status">{gameStatus}</h1>
         <p className="current-score-label">{scoreLabel}</p>
-        <p className="current-score-value">{score}/</p>
+        <p className="current-score-value">{score}/{maxScore}</p>
         <button
           type="button"
           className="play-again-button"

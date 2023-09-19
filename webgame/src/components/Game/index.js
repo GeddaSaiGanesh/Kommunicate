@@ -14,12 +14,27 @@ const Game = (props) => {
   const [count, setCount] = useState(40);
   const [isGameInProgress, setIsGameInProgress] = useState(true);
   const [score, setScore] = useState(0);
-
+  const [maxScore, setMaxScore] = useState(0);
+  const updateMaxScore = () => {
+    switch (playerDetailsList[playerDetailsList.length - 1].gameLevel) {
+      case "Easy":
+        setMaxScore(10);
+        break;
+      case "Medium":
+        setMaxScore(20);
+        break;
+      case "Hard":
+        setMaxScore(25);
+        break;
+      default:
+        setMaxScore(0);
+    }
+  };
   useEffect(() => {
     const timmer = setInterval(() => {
       setCount((old) => (old > 0 ? old - 1 : 0));
     }, 1000);
-
+    updateMaxScore();
     const min = 1000;
     const max = 2000;
     const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -46,7 +61,7 @@ const Game = (props) => {
       <div className="game-container">
         <Box>
           <h1>
-            You're about to die in : <span>{count}</span> seconds
+            You're about to die in :<span>{count}</span> secs
           </h1>
         </Box>
         <div className="flex-row-container">
@@ -91,14 +106,20 @@ const Game = (props) => {
   const ScoreCard = () => {
     const isWon = score >= 10 ? true : false;
     return (
-      <WinOrLoseCard score={score} onClickPlayAgain={resetGame} isWon={isWon} />
+      <WinOrLoseCard
+        score={score}
+        onClickPlayAgain={resetGame}
+        maxScore={maxScore}
+        isWon={isWon}
+      />
     );
   };
+
   return (
     <div className="bg-container">
-      <div >
+      <div>
         <div>
-          {isGameInProgress && score < 10 && count > 0 ? (
+          {isGameInProgress && score < maxScore && count > 0 ? (
             GameCard()
           ) : (
             <ScoreCard />
@@ -106,14 +127,15 @@ const Game = (props) => {
         </div>
         <div className="scoreBoard-container">
           <table>
+            <caption className="scoreboard-tittle">LeaderBoard</caption>
             <tr>
               <th>Name</th>
               <th>Game Level</th>
               <th>Duration</th>
             </tr>
-              {playerDetailsList.map((each)=>(
-                <ScoreCardItem playerDetails={each}/>
-              ))}
+            {playerDetailsList.map((each) => (
+              <ScoreCardItem playerDetails={each} key={each.name} />
+            ))}
           </table>
         </div>
       </div>

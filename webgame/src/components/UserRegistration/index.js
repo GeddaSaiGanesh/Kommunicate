@@ -9,6 +9,8 @@ import SendIcon from "@mui/icons-material/Send";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import "./index.css";
+import PopUP from "../PopUP";
+
 
 const UserRegistration = (props) => {
   const {updateplayerDetails,letPlayButton}=props
@@ -16,23 +18,25 @@ const UserRegistration = (props) => {
   const [mail, setEmail] = useState("");
   const [gameLevel, setGameLevel] = useState("Easy");
   const [phoneNo, setPhoneNo] = useState("");
-
+  
 
   const submitHandler = (event) => {
     event.preventDefault();
+    PopUP()
     const newPlayerDetails={
       name,
       mail,
       phoneNo,
-      gameLevel
+      gameLevel,
+      duration:40
     }
+
     updateplayerDetails(newPlayerDetails)
     letPlayButton()
     setName('')
     setEmail('')
     setEmail('')
     setPhoneNo('')
-    setGameLevel('Easy')
   };
 
   return (
