@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Nabataean&family=Nova+Square&display=swap");
+.main-container {
+  background-image: linear-gradient(to bottom right, #97215d, #0e7373);
+  background-size: cover;
+  background-repeat: none;
+  font-family: "Game of Squids";
+  margin: 0;
+  padding: 0;
+  height: 100dvh;
+}
+.main-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.tittle-image-card {
+  text-align: center;
+  color: #dcd5dc;
+}
+.tittle-image-card h1 {
+  padding: 10px 20px;
+  font-size: 28px;
+}
+.tittle-image-card h1 span {
+  color: #97215d;
+}
+.form-container {
+  background-image: linear-gradient(to bottom right, #bf4b96, #0e7373);
+  padding: 30px 50px;
+  margin: 20px;
+  border-radius: 10px;
+}
+@media screen and (max-width: 400px) {
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .tittle-image-card img {
+    width: 200px;
+    text-align: center;
+  }
+}

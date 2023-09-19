@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Nabataean&family=Nova+Square&display=swap");
+.bg-container {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans Nabataean", sans-serif;
+  font-family: "Nova Square", cursive;
+  background-image: linear-gradient(
+      to bottom right,
+      rgb(237, 27, 118, 0.8),
+      rgba(3, 122, 118, 0.8)
+    ),
+    url("https://res.cloudinary.com/dn4e2kdbi/image/upload/v1694970775/squid-game-red-light-green-light-background-1920-x-1080-p1rd3tpm1vuj4ljh_lbr5q9.jpg");
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.game-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #ffffff33;
+  width: 85%;
+  border: 3px solid #ffffff30;
+  border-radius: 30px;
+  margin: auto;
+  text-align: center;
+}
+.box {
+  height: 300px;
+  width: 300px;
+}
+.flex-row-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.game-container h1{
+  font-size: 20px;
+}
+@media screen and (min-width: 768px) {
+  .game-container {
+    width: 80%;
+    padding: 32px;
+  }
+  .game-container h1{
+    font-size: 18px;
+  }
+  table{
+    width: 80%;
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .game-container {
+    width: 70%;
+  }
+  .game-container h1{
+    font-size: 30px;
+  }
+  table{
+    width: 70%;
+    font-size: 24px;
+  }
+  .flex-row-container {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .game-container {
+    width: 60%;
+  }
+  table{
+    width: 60%;
+    font-size: 34px;
+  }
+  .game-container h1{
+    font-size: 34px;
+  }
+}
+
+.scoreBoard-container{
+  padding: 30px;
+}
+table{
+  background-color:#ffffff33;;
+  border-radius: 10px;
+  border-spacing: 0;
+  width: 65%;
+  font-size: 20px;
+  text-align: center;
+  background-color: #ffffff33;
+  border: 3px solid #ffffff30;
+  border-radius: 30px;
+  margin: auto;
+}
+th {
+  padding: 10px 20px;
+}
+th,
+td {
+  border-style: solid;
+  border-width: 0 1px 1px 0;
+  border-color: rgba(0, 0, 0, 0.1);
+  color:#ffffff;
+}
+
+th:first-child {
+  border-top-left-radius: 5px;
+}
+th:last-child {
+  border-top-right-radius: 5px;
+  border-right: none;
+}
+th:first-child,
+td:first-child {
+  padding: 7px 8px;
+}
+
+td {
+  padding: 7px 20px;
+}
