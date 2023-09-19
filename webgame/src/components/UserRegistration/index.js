@@ -9,7 +9,6 @@ import SendIcon from "@mui/icons-material/Send";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import "./index.css";
-import PopUP from "../PopUP";
 
 
 const UserRegistration = (props) => {
@@ -22,7 +21,6 @@ const UserRegistration = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    PopUP()
     const newPlayerDetails={
       name,
       mail,
